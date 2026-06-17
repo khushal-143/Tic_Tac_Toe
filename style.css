@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#141E30,#243B55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+main{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:1rem;
+    font-size:3rem;
+    letter-spacing:2px;
+}
+
+/* Game Board */
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:2rem 0;
+}
+
+.game{
+    width:60vmin;
+    height:60vmin;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+}
+
+.box{
+    border:none;
+    border-radius:20px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    color:#00e5ff;
+    font-size:7vmin;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    transition:0.3s ease;
+}
+
+.box:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(0,229,255,.6);
+}
+
+/* Buttons */
+
+#btn,
+#new-btn,
+#resetScore{
+    margin-top:1rem;
+    padding:1rem 2rem;
+    border:none;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:500;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(90deg,#ff416c,#ff4b2b);
+    box-shadow:0 10px 25px rgba(255,75,43,.4);
+    transition:.3s;
+}
+
+#btn:hover,
+#new-btn:hover,
+#resetScore:hover{
+    transform:translateY(-4px);
+}
+
+/* Score Card */
+
+#ScoreHead{
+    margin-top:2rem;
+    font-size:2rem;
+}
+
+#Score{
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    margin-top:1.5rem;
+}
+
+#Score div{
+    width:140px;
+    padding:1.5rem;
+    border-radius:20px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+#xScore{
+    color:#00e5ff;
+    font-size:2.5rem;
+}
+
+#oScore{
+    color:#ff4b2b;
+    font-size:2.5rem;
+}
+
+/* Winner Screen */
+
+.msg-container{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:2rem;
+    z-index:100;
+}
+
+#msg{
+    font-size:4rem;
+    color:#00e5ff;
+    text-shadow:0 0 20px #00e5ff;
+}
+
+.hide{
+    display:none;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    .game{
+        width:85vmin;
+        height:85vmin;
+    }
+
+    #Score{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    #msg{
+        font-size:2.5rem;
+    }
+}
